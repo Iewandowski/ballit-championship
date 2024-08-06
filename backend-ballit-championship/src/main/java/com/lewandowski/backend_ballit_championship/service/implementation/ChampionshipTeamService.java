@@ -82,4 +82,8 @@ public class ChampionshipTeamService implements IChampionshipTeamService {
     public String getWinnerBattleCry(Long championshipId) {
         return championshipTeamRepository.FindFirstByChampionshipId(championshipId);
     }
+
+    public int countOpenTeams(Long championshipId) {
+        return championshipTeamRepository.countOpenTeams(championshipId);
+    }
 }

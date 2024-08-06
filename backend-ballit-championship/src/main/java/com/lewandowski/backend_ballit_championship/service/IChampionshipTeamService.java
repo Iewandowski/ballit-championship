@@ -13,4 +13,5 @@ public interface IChampionshipTeamService {
     void registerGrusht(Long teamId, Long championshipId);
     List<ChampionshipTeamResponse> getTeamsByPoints(Long championshipId);
     String getWinnerBattleCry(Long championshipId);
+    int countOpenTeams(Long championshipId);
 } 

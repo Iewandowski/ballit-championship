@@ -20,4 +20,7 @@ public interface ChampionshipTeamRepository extends JpaRepository<ChampionshipTe
         + "ON ct.id.teamId = t.teamId WHERE ct.id.championshipId = :championshipId "
         + "ORDER BY ct.pointsTotal DESC")
     String FindFirstByChampionshipId(Long championshipId);
+
+    @Query("SELECT COUNT(ct) FROM ChampionshipTeam ct WHERE ct.id.championshipId = :championshipId AND ct.status = true")
+    int countOpenTeams(Long championshipId);
 }
