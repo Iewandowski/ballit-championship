@@ -28,8 +28,8 @@ public class TeamService implements ITeamService {
 
         Team newTeam = Team.builder()
             .name(teamRequest.getName())
-            .battle_cry(teamRequest.getBattle_cry())
-            .foundation_year(teamRequest.getFoundation_year()).build();
+            .battleCry(teamRequest.getBattle_cry())
+            .foundationYear(teamRequest.getFoundation_year()).build();
 
             return teamRepository.save(newTeam);
     }

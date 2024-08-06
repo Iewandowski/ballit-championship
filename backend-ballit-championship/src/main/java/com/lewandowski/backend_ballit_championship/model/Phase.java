@@ -1,12 +1,11 @@
 package com.lewandowski.backend_ballit_championship.model;
 
-import java.sql.Date;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,18 +16,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Team {
+@IdClass(PhaseId.class)
+public class Phase {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name = "team_id")
-    private Long teamId;
+    @Column(name = "championship_id")
+    private Long championshipId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "phase_id", insertable = false, updatable = false)
+    private Long phaseId;
 
     @Column
-    private String name;
-
-    @Column(name = "battle_cry")
-    private String battleCry;
-
-    @Column(name = "foundation_year")
-    private Date foundationYear;
+    private boolean status;
 }

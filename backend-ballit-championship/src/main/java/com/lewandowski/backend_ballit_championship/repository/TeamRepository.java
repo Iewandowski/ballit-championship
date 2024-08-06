@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.lewandowski.backend_ballit_championship.model.Team;
 
 @Repository
-public interface TeamRepository extends JpaRepository<Team, Long>{
+public interface TeamRepository extends JpaRepository<Team, Long> {
     Optional<Team> findByName(String name);
 }

@@ -1,6 +1,6 @@
 package com.lewandowski.backend_ballit_championship.model;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,23 +12,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Data
 @Entity
-public class Team {
+public class Championship {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name = "team_id")
-    private Long teamId;
+    @Column(name = "championship_id")
+    private Long championshipId;
 
     @Column
-    private String name;
+    private LocalDateTime date;
 
-    @Column(name = "battle_cry")
-    private String battleCry;
-
-    @Column(name = "foundation_year")
-    private Date foundationYear;
+    @Column
+    private boolean status;
 }
